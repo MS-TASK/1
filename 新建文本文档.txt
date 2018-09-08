@@ -1,0 +1,22 @@
+//计算1到n之间的素数
+#include "iostream"
+#include "math.h"
+using namespace std;
+void main()
+{
+	int m,n,t=0;
+	cout<<"计算1到n之间的所有素数，输入n:";
+	cin>>m;
+	for(m;m>1;m--)
+	{
+		for(n=2;n<=sqrt(m);n++)
+			if(m%n==0) break;
+		if(n>sqrt(m))
+		{
+			printf("%5d",m);
+			t+=1;
+			if(t%10==0) cout<<endl;
+		}	
+	}
+	cout<<endl;
+}
