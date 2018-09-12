@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+class Point
+{
+  public:
+    Point();    //缺省样式的构造函数
+    Point(int x, int y);    //带参数的构造函数
+    ~Point();   //析构函数
+    Point(Point &P);    //拷贝构造函数声明
+    void setPoint(int X, int Y);    //设置点坐标
+    int getX();   //获得点X的坐标
+    int getY();   //获得Y坐标
+    void setX(int X);   //设置X坐标
+    void setY(int Y);   //设置Y坐标
+  private:
+    int x,y;
+};
+Point :: Point()    {x=0; y=0; cout<<"缺省样式的构造函数调用"<<endl;}
+Point :: Point(int X; int Y)    {x=X; y=Y; cout<<"带参构造函数"<<endl;}
+Point :: ~Point()   {cout<<"点("<<x<<","<<y<<")"<<"析构函数调用"<<endl;}
+Point :: Point(Point &P)    {x=P.x; y=P.y; cout<<"拷贝构造函数调用"<<endl;}
+void Point :: setPoint(int X, int Y)    {x=X; y=Y;}
+int Point :: getX() {return x;}
+int Point :: getY() {return y;}
+void Point :: setX(int X)   {x=X;}
+Void Point :: setY(int Y)   {y=Y;}
+int main()
+{
+    Point p1(1,1), p2(p1);
+    p1.setPoint(2,2);
+    return 0;
+}
